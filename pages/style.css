@@ -5,6 +5,7 @@
 body {
     background-color: hsl(218, 28%, 13%);
     font-family: 'open sans';
+    transition: all 1s ease-in-out;
 }
 h2{
     color: white;
@@ -24,6 +25,10 @@ p{
     font-family: 'Raleway';
     text-align: center;
     height: 1100px;
+    transition: background-color 1s ease-in-out;
+}
+.top.dark-mode{
+    background-color: hsl(198, 60%, 50%);
 }
 nav{
     display: flex;
@@ -283,3 +288,263 @@ nav{
     border-radius: 50%;
     box-sizing: border-box;
 }
+/*styling back to top*/
+.back {
+    padding :10px;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all  0.5s ease-in-out;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+}
+.back.visible{
+    opacity: 1;
+    transform: translate(5px,0px);
+}
+/*styling dark mode*//*styling only applied to .top class*/
+.dark {
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    position: fixed;
+    bottom: 2%;
+    left: 2%;
+}
+.dark:hover {
+    cursor: pointer;
+}
+/* body.dark-mode{
+    background-color: hsl(198, 60%, 50%);
+    color: black;
+} */
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*testing responsive design*/ /*popular breakpoints*/
+/* Extra small devices (phones, less than 576px) */
+@media screen and (max-width: 599.98px)/*we could specify min width only but in each one */ {
+   
+    .list{
+      width: 55%;
+    }
+    .intro {
+      width: 100%;
+      
+    }
+    .intro h2 {
+        font-size: 15px;
+    }
+    .intro p {
+        font-size: 15px;
+    }
+    .inner h2 {
+      font-size: 10px;
+    }
+    .illustration img{
+        width: 400px;
+    }
+    .illustration {
+        width:80%;
+    }
+
+    .access {
+      width: 80%;
+    }
+    .access h2 {
+        font-size: 15px;
+    }
+    .access p {
+        font-size: 10px;
+    }
+    .started-2{
+        font-size: 9px;
+        
+    }
+    .access form input[type='text']{/*important*/
+        padding: 12px;
+    }
+    .productive img {
+        width: 50%;
+    }
+    .productive div{
+        width: 50%;
+    }
+    .products div{
+        width:100%
+    }
+    .total{
+        width: 75%;
+        margin-bottom: 15px;
+    }
+    .outer p {
+        font-size: 15px;
+    }
+    .inner div{
+        font-size: 15px;
+    }
+    .contact {
+        height: 500px;
+        align-items: first baseline;
+    }
+    .contact div{
+        font-size: 7px;
+    }
+    .location p {
+        font-size: 7px;
+    }
+    .call div p {
+        font-size: 7px;
+    }
+    .list ul li{
+        
+        margin-right: 10%;
+       
+    }
+  }
+  
+  /* Small devices (phones, 576px and up) */
+  @media screen and (min-width: 600px) and (max-width: 767.98px) {
+    
+    .list{
+      width: 55%;
+    }
+    .intro {
+      width: 100%;
+      
+    }
+    .intro h2 {
+        font-size: 15px;
+    }
+    .intro p {
+        font-size: 15px;
+    }
+    .inner h2 {
+      font-size: 10px;
+    }
+    .illustration img{
+        width: 500px;
+    }
+
+    .access {
+      width: 85%;
+    }
+    .productive img {
+        width: 50%;
+    }
+    .productive div{
+        width: 50%;
+    }
+    .products div{
+        width:100%
+    }
+    .total{
+        width: 75%;
+        margin-bottom: 15px;
+    }
+    .outer p {
+        font-size: 15px;
+    }
+    .inner div{
+        font-size: 15px;
+    }
+    .contact {
+        height: 500px;
+        align-items: first baseline;
+    }
+    .contact div{
+        font-size: 7px;
+    }
+    .location p {
+        font-size: 7px;
+    }
+    .call div p {
+        font-size: 7px;
+    }
+    .list ul li{
+        
+        margin-right: 10%;
+       
+    }
+    
+  }
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media screen and (min-width: 768px) and (max-width: 991.98px) {
+   
+    .list{
+      width: 42%;
+    }
+    .intro {
+      width: 85%;
+    }
+    .inner h2 {
+      font-size: 10px;
+    }
+
+    .access {
+      width: 70%;
+    }
+    .productive img {
+        width: 60%;
+    }
+    
+   
+  }
+  
+  /* Large devices (desktops, 992px and up) */
+  @media screen and (min-width: 992px) and (max-width: 1199.98px) {
+      /* .top{
+          background-color: aqua;
+      }   */
+      .list{
+        width: 32%;
+      }
+      .intro {
+        width: 85%;
+      }
+      .inner h2 {
+        font-size: 16px;
+      }
+
+      .access {
+        width: 60%;
+      }
+     
+  }
+
+  
+   /*Extra large devices (large desktops, 1200px and up)*/
+  @media screen and (min-width: 1200px) and (max-width: 1534.98px) {
+     /* .top{
+          background-color: aqua;
+      }   */
+      .list {
+        width: 26%;
+      }
+      .intro {
+        width: 70%;
+      }
+      .inner h2 {
+        font-size: 18px;
+      }
+    
+  }
+   
+  /*1920x1080*/
+  @media screen and (min-width: 1535px) and (max-width: 1920px) {
+    /* .top{
+         background-color: aqua;
+     }  */
+
+     .list {
+        width: 22%;
+     }
+     .intro {
+        width: 65%;
+     }
+   
+ }
+  
