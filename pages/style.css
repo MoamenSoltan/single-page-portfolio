@@ -45,6 +45,11 @@ nav{
     margin-right: 15%;
     font-weight: 400;
 }
+.list ul li:hover {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
 .illustration {
     margin: auto;
     width: 40%;
@@ -82,7 +87,11 @@ nav{
     padding: 20px 100px;
     background-image: linear-gradient(to right ,hsl(176, 68%, 64%),hsl(198, 60%, 50%));
     margin-bottom: 30px;
+    cursor: pointer;
     
+}
+.started:hover {
+    background-image:linear-gradient(hsl(184, 73%, 71%),hsl(184, 73%, 71%)) ;
 }
 /*styling products*/
 .products {
@@ -130,12 +139,17 @@ nav{
     width: 90%;
     text-wrap: pretty;
 }
-.productive div a {
+.productive div .white a {
     color: hsl(176, 68%, 64%);
     text-decoration: underline;
     text-underline-offset: 6px;/*new*/
 }
-.productive div a div {
+
+
+/*important selector 
+.link-container:hover .link-text,
+.link-container:hover .circle*/
+.productive div .white a div {
     display: inline-block;
     width: 10px;
     height: 10px;
@@ -143,6 +157,16 @@ nav{
     background-color:  hsl(176, 68%, 64%);
     margin-left: 7px;
     
+}
+
+.white{  
+    text-wrap: nowrap;
+}
+.white:hover .link {/*important advanced note //here we specified class names for a and div for css to work, otherwise it wont because of 'low specifity'*/
+    color: white;
+}
+.white:hover .link-circle{
+    background-color: white;
 }
 
 /*styling testimonial*/
@@ -232,6 +256,19 @@ nav{
     border: none;
     margin-right: 20px;
 }
+/*styling the error message for form validation*/
+.error{
+    font-size: 12px;
+    color: red;
+    display: none;/*or opacity but here its easier to modify in js via element.style.display*/
+    margin: auto;
+   
+}
+#email.invalid {
+    border: solid 1px;
+    border-color: red;
+}
+
 .contact {
     width: 100%;
     height: 600px;
@@ -324,6 +361,99 @@ nav{
 
 /*----------------------------------------------------------------------------------------------------------------------*/
 /*testing responsive design*/ /*popular breakpoints*/
+@media screen and (max-width:430px) {
+   
+    .list{
+        width: 50%;
+        margin-top: 10px;
+      }
+      .intro {
+        width: 100%;
+        
+      }
+      .intro h2 {
+          font-size: 15px;
+      }
+      .intro p {
+          font-size: 15px;
+      }
+      .inner h2 {
+        font-size: 10px;
+      }
+      .illustration img{
+          width: 400px;
+      }
+      .illustration {
+          width:80%;
+      }
+  
+      .access {
+        width: 80%;
+      }
+      .access h2 {
+          font-size: 15px;
+      }
+      .access p {
+          font-size: 10px;
+      }
+      .started-2{
+          font-size: 9px;
+          padding: 15px;
+      }
+      .access form input[type='text']{/*important*/
+          padding: 12px;
+          
+      }
+      .productive img {
+          width: 50%;
+      }
+      .productive div{
+          width: 50%;
+      }
+      .productive div h2,p {
+        font-size: 10px;
+      }
+
+      .products div{
+          width:100%
+      }
+      .total{
+          width: 75%;
+          margin-bottom: 15px;
+      }
+      .outer p {
+          font-size: 15px;
+      }
+      .inner div{
+          font-size: 15px;
+      }
+      .contact {
+          height: 500px;
+          align-items: first baseline;
+      }
+      .contact div{
+          font-size: 7px;
+      }
+      .location p {
+          font-size: 7px;
+      }
+      .call div p {
+          font-size: 7px;
+      }
+      .list ul li{
+          font-size: 12px;
+          margin-right: 5%; 
+      }
+      nav{
+        
+        align-items: flex-start;
+    
+    }
+    
+    .social{
+        padding: 2px;
+    }
+}
 /* Extra small devices (phones, less than 576px) */
 @media screen and (max-width: 599.98px)/*we could specify min width only but in each one */ {
    

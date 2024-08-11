@@ -42,3 +42,41 @@ function themeBehaviour () {
 }
 
 theme.addEventListener('click',themeBehaviour)
+
+//script for the form validation
+let field=document.querySelector('#email')
+field.addEventListener('input',function () {//listener is on input
+    let email=field.value.trim();//advanced
+    let textError=document.querySelector('.error')
+    if(!isValidEmail(email)){
+        textError.style.display = 'block';//new display is a property not a method//isnt auto shown
+        email.classList.add('invalid')
+    }
+    else{//very important , so it fixes itself when a correct input is typed after an incorrect one
+        textError.style.display='none';
+        email.classList.remove('invalid')
+    }
+})
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+/*
+Regular Expression:
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+This is a regular expression (regex) pattern that defines the rules for what constitutes a valid email address. Let's break down this regex:
+^: Asserts the start of the string.
+[^\s@]+:
+[^...] defines a negation, meaning "not these characters."
+\s matches any whitespace character.
+@ is the @ symbol.
++ means "one or more" of the preceding characters (so, "one or more characters that are not whitespace or @").
+@: Requires an @ symbol after the local part (before the domain).
+[^\s@]+: Again matches one or more characters that are not whitespace or @ (this will be the domain name).
+\.: Escapes the dot (.) character, which is required between the domain name and the domain extension (e.g., ".com").
+[^\s@]+: Matches one or more characters that are not whitespace or @ (this will be the domain extension, like "com" in "example.com").
+$: Asserts the end of the string.
+ */
