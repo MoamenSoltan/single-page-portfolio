@@ -139,7 +139,7 @@ nav{
     width: 90%;
     text-wrap: pretty;
 }
-.productive div .white a {
+.productive div .white a {/*for simpler code to implement hover color change , use::after{content:'';and other styles} ,instead of making a div in the <a>*/
     color: hsl(176, 68%, 64%);
     text-decoration: underline;
     text-underline-offset: 6px;/*new*/
